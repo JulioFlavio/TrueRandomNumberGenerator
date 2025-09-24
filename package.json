@@ -1,0 +1,22 @@
+{
+  "name": "n8n-nodes-random-number",
+  "version": "1.0.0",
+  "description": "Node de número aleatório para n8n",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc"
+  },
+  "n8n": {
+    "nodes": [
+      "dist/Nodes/RandomNumber/RandomNumber.node.js"
+    ],
+    "iconPath": "icons/RandomNumber.svg"
+  },
+  "dependencies": {
+    "n8n-workflow": "^1.17.0"
+  },
+  "devDependencies": {
+    "@types/node": "^24.5.2",
+    "typescript": "^5.9.2"
+  }
+}
