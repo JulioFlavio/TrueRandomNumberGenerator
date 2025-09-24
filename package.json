@@ -10,7 +10,7 @@
     "nodes": [
       "dist/Nodes/RandomNumber/RandomNumber.node.js"
     ],
-    "iconPath": "icons/RandomNumber.svg"
+    "iconPath": "./RandomNumber.svg"
   },
   "dependencies": {
     "n8n-workflow": "^1.17.0"

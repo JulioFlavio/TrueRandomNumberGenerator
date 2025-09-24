@@ -4,10 +4,9 @@ exports.RandomNumber = void 0;
 class RandomNumber {
     constructor() {
         this.description = {
-            displayName: 'Random Number', // Nome do nó na interface
+            displayName: 'True Random Number', // Nome do nó na interface
             name: 'randomNumber',
-            icon: 'fa:rocket',
-            iconUrl: 'icons/RandomNumber.svg',
+            icon: 'file:randomnumber.svg',
             group: ['transform'], // Categoria
             version: 1,
             description: 'Gera um número aleatório entre min e max',
