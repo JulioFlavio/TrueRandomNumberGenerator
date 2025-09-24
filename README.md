@@ -10,90 +10,105 @@ Este projeto tem como base a criação de um **conector** para o <a href="n8n.io
   TrueRandomNumberGenerator/
   │
   ├── src/                 
-  │   ├── nodes/          # Rotas da API
+  │   ├── nodes/            # Rotas da API
   │   │   └── RandomNumber/
   │   │       └── RandomNumber.node.ts
   │   └── index.ts
-  │
-  ├── icons/
-  │   └── RandomNumber.svg
-  ├── .env                 # Variáveis de ambiente (opcional)
-  ├── .gitignore           # Arquivos/pastas ignorados pelo Git
   ├── docker-compose.yaml
   ├── package.json
   ├── package-lock.json
-  └── README.md            # Documentação do projeto
+  └── README.md             # Documentação do projeto
 ```
 
----
 
 ## 🚀 Como executar o projeto
 
 ### 1. Pré-requisitos
 - [Node.js](https://nodejs.org/) (v18 ou superior recomendado)
 - [npm](https://www.npmjs.com/) (vem junto com o Node)
+- [Docker Compose](https://docs.docker.com/compose/)
 
 Verifique se estão instalados:
 ```bash
 node -v
 npm -v
+docker -v
 ```
 
 ---
 
 ### 2. Instalar dependências
-Após clonar ou copiar o projeto para sua máquina:
-
+- Clonar projeto
+```git
+  git clone https://github.com/JulioFlavio/TrueRandomNumberGenerator.git
+```
+- Acessar a pasta do projeto
 ```bash
-cd meu-projeto
+  cd TrueRandomGenerator
+```
+- Instalar o node
+```bash
 npm install
 ```
 
-Isso cria a pasta `node_modules/` automaticamente.
+  Isso cria a pasta `node_modules/` automaticamente.
 
----
-
-### 3. Configurar variáveis de ambiente
-Crie um arquivo `.env` na raiz do projeto:
-
-```
-PORT=3000
-```
-
----
-
-### 4. Rodar o servidor
+- Rodar o build
 ```bash
-npm start
+  npm run build
 ```
+Isso cria a pasta `dist/` automaticamente
 
-Se você não tiver configurado um script no `package.json`, rode direto com:
-```bash
-node src/server.js
+---
+
+### 3. Rodar o servidor
+```docker
+  docker compose up -d
 ```
 
 ---
 
-### 5. Testar no navegador
-Abra no navegador ou no Postman:
+### 4. Testar no navegador
+- Abra no navegador:
 ```
-http://localhost:3000
+  http://localhost:5678
 ```
+#### 1. Tela inicial:
 
-Deve aparecer a resposta **Hello World!** (ou outra mensagem que você definir).
+- Entre com seu login e sua senha
+
+![TelaInicial](images/image.png)
+
+#### 2. Projetos
+- Abra ou crie um novo projeto
+
+![CriarProjeto](images/image-3.png)
+
+#### 3. Criando um fluxo
+- Adicione um novo passo
+
+![NovoPasso](images/image-2.png)
+
+#### 4. Escolhendo o conector
+- Procure por "True Random Number Generator"
+
+![conector](images/image-4.png)
+
+#### 5. Sorteando
+- Preencha os campos `min` e `max`
+- Clique em `Execute Step`
+
+![alt text](images/image-5.png)
+
+- Saída esperada:
+
+![alt text](images/image-6.png)
 
 ---
 
-## 🛠 Scripts úteis
-
-- `npm install express` → instala o Express
-- `npm start` → inicia o servidor
-- `npm run dev` → inicia em modo desenvolvimento (se usar o nodemon)
-
----
 
 ## 📌 Observações
 - A pasta `node_modules/` **não deve ser enviada para o GitHub** (já está no `.gitignore`).
-- Para instalar dependências em outra máquina, basta rodar `npm install` que o `package.json` cuida disso.
+- Para instalar dependências em outra máquina, basta rodar `npm install` e `npm run build` que o `package.json` cuida disso.
 
 ---
